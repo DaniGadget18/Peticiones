@@ -5,14 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.textclassifier.TextLinks;
 import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.gson.Gson;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         findViewById(R.id.btn1_recibir).setOnClickListener(this);
+        findViewById(R.id.btn1_recibir2).setOnClickListener(this);
 
         texto = findViewById(R.id.lb1_nombre);
     }
@@ -56,7 +60,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 });
                 Volleys.getInstance(this).getmRequestQueue().add(tex);
                 break;
+
+            case R.id.btn1_recibir2:
+                JsonArrayRequest jar = new JsonArrayRequest(Request.Method.GET, "http://nuevo.rnrsiilge-org.mx/lista", null, new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        Log.d("res",response.toString());
+                        
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+                Volleys.getInstance(this).getmRequestQueue().add(jar);
+                break;
         }
+
+
 
     }
 }

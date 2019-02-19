@@ -7,6 +7,8 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="110dp"
@@ -19,5 +21,19 @@
         android:text="Nombre: "
         android:id="@+id/lb1_nombre"
         android:textSize="50dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:id="@+id/btn1_recibir2"
+        android:text="Recibir datos" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Nombre: "
+        android:id="@+id/lb1_nombre2"
+        android:textSize="50dp"/>
+
 
 </LinearLayout>
