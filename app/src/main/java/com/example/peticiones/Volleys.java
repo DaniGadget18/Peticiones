@@ -5,8 +5,8 @@ import android.content.Context;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
-public class Volleys {
-    private static Volleys mVolleyS = null;
+public class  Volleys {
+    private  static Volleys mVolleyS = null;
     private RequestQueue mRequestQueue;
 
     private Volleys(Context context){
